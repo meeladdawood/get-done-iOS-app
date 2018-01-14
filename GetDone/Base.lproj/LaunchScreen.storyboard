@@ -1,7 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,15 +15,52 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XTS-8a-djk">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="irW-Az-dEK" userLabel="LogoView">
+                                        <rect key="frame" x="0.0" y="127" width="414" height="295"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreen Logo" translatesAutoresizingMaskIntoConstraints="NO" id="gJS-v3-7ac">
+                                                <rect key="frame" x="86" y="0.0" width="267" height="295"/>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="gJS-v3-7ac" secondAttribute="trailing" constant="61" id="296-ov-aoK"/>
+                                            <constraint firstAttribute="bottom" secondItem="gJS-v3-7ac" secondAttribute="bottom" id="7RN-o4-PYk"/>
+                                            <constraint firstItem="gJS-v3-7ac" firstAttribute="top" secondItem="irW-Az-dEK" secondAttribute="top" id="CeD-3u-MxE"/>
+                                            <constraint firstItem="gJS-v3-7ac" firstAttribute="leading" secondItem="irW-Az-dEK" secondAttribute="leading" constant="86" id="gnl-Ag-YOu"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.26663362979888916" green="0.26668566465377808" blue="0.26663035154342651" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="irW-Az-dEK" firstAttribute="leading" secondItem="XTS-8a-djk" secondAttribute="leading" id="7fz-1u-wX5"/>
+                                    <constraint firstItem="irW-Az-dEK" firstAttribute="top" secondItem="XTS-8a-djk" secondAttribute="top" constant="127" id="LYR-gd-OFj"/>
+                                    <constraint firstAttribute="trailing" secondItem="irW-Az-dEK" secondAttribute="trailing" id="Tsf-Ro-FbC"/>
+                                    <constraint firstAttribute="bottom" secondItem="irW-Az-dEK" secondAttribute="bottom" constant="314" id="miH-OD-cun"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="XTS-8a-djk" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="ENo-6Q-kRb"/>
+                            <constraint firstItem="XTS-8a-djk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Maj-bt-rtO"/>
+                            <constraint firstItem="XTS-8a-djk" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="gF5-TW-R6h"/>
+                            <constraint firstItem="XTS-8a-djk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xei-u1-ZW6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="LaunchScreen Logo" width="212" height="240"/>
+    </resources>
 </document>
