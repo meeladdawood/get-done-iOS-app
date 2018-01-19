@@ -9,7 +9,7 @@
 import UIKit
 
 class TodoListViewController: UITableViewController {
-
+    
     
     var itemArray = [Item]()
     let defaults =  UserDefaults.standard
@@ -23,22 +23,25 @@ class TodoListViewController: UITableViewController {
         let newItem = Item(task: "Find Mikey")
         itemArray.append(newItem)
         
-//        if let items = defaults.array(forKey: "ToDoListArray") as? [String] {
-//            itemArray =  item
-//        }
+        //        if let items = defaults.array(forKey: "ToDoListArray") as? [String] {
+        //            itemArray =  item
+        //        }
     }
-
-   //MARK - TableView Datasource methods
-
+    
+    //MARK - TableView Datasource methods
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemArray.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath)
-        cell.textLabel?.text = itemArray[indexPath.row].title
         
-        if itemArray[indexPath.row].done == true {
+        let item = itemArray[indexPath.row]
+        
+        cell.textLabel?.text = item.title
+        
+        if item.done == true {
             cell.accessoryType = .checkmark
         } else {
             cell.accessoryType = .none
@@ -49,15 +52,11 @@ class TodoListViewController: UITableViewController {
     
     //MARK - TableView Delegate methods
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-        if itemArray[indexPath.row].done == false {
-            itemArray[indexPath.row].done = true
-        } else {
-            itemArray[indexPath.row].done = false
-        }
+        
+        //Sets the done datafield to the opposite of what it is.
+        itemArray[indexPath.row].done = !itemArray[indexPath.row].done
         
         tableView.reloadData()
-        
         tableView.deselectRow(at: indexPath, animated: true)
         
     }
@@ -67,7 +66,7 @@ class TodoListViewController: UITableViewController {
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         
         var textField = UITextField()
-    
+        
         let alert = UIAlertController(title: "Add To-Do", message: "", preferredStyle: .alert)
         
         
@@ -84,11 +83,11 @@ class TodoListViewController: UITableViewController {
             self.itemArray.append(newItem)
             self.defaults.set(self.itemArray, forKey: "ToDoListArray")
             self.tableView.reloadData()
-        
+            
         }
         let cancelAdd = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         
-       
+        
         alert.addAction(addItemAction)
         alert.addAction(cancelAdd)
         
@@ -99,8 +98,8 @@ class TodoListViewController: UITableViewController {
         
     }
     
-
-
-
+    
+    
+    
 }
 
