@@ -10,8 +10,8 @@ import Foundation
 
 class Item {
     
-    let title : String
-    let done : Bool
+    var title : String = ""
+    var done : Bool = false
     
     init(task : String) {
         title = task
